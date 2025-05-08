@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuganish K - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lucida Console', monospace;
+    }
+    @layer utilities {
+    .text-glow {
+      text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 20px #00ADB5;
+    }
+    .hover\:text-glow:hover {
+      text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5, 0 0 20px #00ADB5;
+    }
+    .text-lightglow {
+      text-shadow: 0 0 3px #00ADB5, 0 0 2px #00ADB5, 0 0 2px #00ADB5;
+    }
+    .hover\:text-lightglow:hover {
+      text-shadow: 0 0 3px #00ADB5, 0 0 2px #00ADB5, 0 0 2px #00ADB5;
+    }
+    .hover\:img-glow:hover {
+      box-shadow: 0 0 10px #00ADB5, 0 0 20px #00ADB5, 0 0 30px #00ADB5;
+    }
+    .glow {
+    filter: drop-shadow(0 0 5px #00ADB5) 
+            drop-shadow(0 0 10px #00ADB5) 
+            drop-shadow(0 0 20px #00ADB5);
+  }
+  }
+  @keyframes typing {
+    from { width: 10% }
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+
+  .typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00ADB5; /* Blinking cursor */
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+  }
+  .skill-box img {
+  transition: transform 0.3s ease-in-out;
+  }
+
+  .skill-box:hover img {
+  transform: scale(1.1);
+  }
+
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg1: '#222831',
+            bg2: '#393E46',
+            accent: '#00ADB5',
+            textLight: '#EEEEEE',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="h-screen overflow-hidden bg-cover bg-center" style="background-image: url('/images/bgimg.jpg');">
+  <div class="flex h-full">
+
+    <!-- Static Sidebar -->
+    <aside id="sidebar" class="bg-black/60 w-1/4 shadow-lg pb-6 pr-8 pl-8 pt-3 flex flex-col items-center justify-start space-y-6 transition-all duration-300">
+      
+      <button id="hamburgerIcon" class="text-accent text-3xl shadow-accent mb-6 md:hidden">
+        &#9776;
+      </button>
+
+      <div class="grid grid-row-2">
+        <div class="mx-auto">
+          <img src="/images/photo.png" alt="Yuganish K" class="max-w-[200px] h-auto drop-shadow-[0_0_10px_#00ADB5] hover:scale-105 transition duration-300">
+        </div>
+        <div class="mx-auto overflow-hidden max-w-xs">
+          <div class="text-center mt-6">
+            <h1 class="text-2xl font-bold text-white shadow-lg mb-4">YUGANISH K</h1>
+            <p class="text-1xl font-semibold text-accent shadow-lg hover:text-lightglow hover:text-gray-900 hover:scale-102 transition duration-300 typing">Software Developer</p>
+          </div>
+        </div>
+      </div>
+      <nav class="flex flex-col space-y-7 w-full text-center mt-5">
+        <button onclick="showSection('about')" class="bg-black text-white py-2 px-4 rounded shadow-lg hover:bg-black hover:scale-105 hover:shadow-accent hover:text-accent hover:text-glow transition duration-300">About</button>
+        <button onclick="showSection('skills')" class="bg-black text-white py-2 px-4 rounded shadow-lg hover:bg-black hover:scale-105 hover:shadow-accent hover:text-accent hover:text-glow transition duration-300">Skills</button>
+        <button onclick="showSection('education')" class="bg-black text-white py-2 px-4 rounded shadow-lg hover:bg-black hover:scale-105 hover:shadow-accent hover:text-accent hover:text-glow transition duration-300">Education</button>
+        <button onclick="showSection('projects')" class="bg-black text-white py-2 px-4 rounded shadow-lg hover:bg-black hover:scale-105 hover:shadow-accent hover:text-accent hover:text-glow transition duration-300">Projects</button>
+        <button onclick="showSection('contact')" class="bg-black text-white py-2 px-4 rounded shadow-lg hover:bg-black hover:scale-105 hover:shadow-accent hover:text-accent hover:text-glow transition duration-300">Contact</button>
+      </nav>
+    </aside>
+
+    <!-- Dynamic Content Area -->
+    <main id="mainContent" class="w-3/4 p-10 overflow-y-auto transition-all duration-300">
+     
+      <div id="about" class="section py-16 m-12 transition-opacity duration-500 opacity-0">
+        <h2 class="text-5xl font-bold text-white text-center mb-8">ABOUT ME</h2>
+      
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-full text-white">
+            <p class="text-lg mb-4">
+              Hello! I'm Yuganish K, a Full Stack Developer with experience in designing and developing an application. I have a strong foundation in both front-end and back-end technologies. I'm passionate about learning new technologies and solving complex problems. I strive to write clean, efficient, and maintainable code. My goal is to create impactful and user-friendly applications that make a difference.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center mt-6">
+          <a href="https://drive.google.com/uc?export=download&id=1k52FAGUSiFTsHwoZsXw7JkOXDqXw34M_" class="bg-black border-2 border-accent hover:bg-black text-white hover:scale-105 hover:text-accent hover:text-glow hover:shadow-accent font-semibold py-2 px-4 rounded shadow transition duration-300" download>
+            Download CV
+          </a>
+        </div>
+        <div class="flex justify-center space-x-10 mt-20">
+          <a href="mailto:yuganish03@gmail.com" target="_blank">
+            <img src="/images/mail-icon.png" alt="Email" class="max-w-[60px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+          </a>
+          <a href="https://www.linkedin.com/in/yuganish-k/" target="_blank">
+            <img src="/images/linkedin-icon.png" alt="LinkedIn" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+          </a>
+          <a href="https://www.instagram.com/yuga_1238/" target="_blank">
+            <img src="/images/instagram-icon.png" alt="Instagram" class="max-w-[55px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+          </a>
+          <a href="https://github.com/yourusername" target="_blank">
+            <img src="/images/github-icon.png" alt="GitHub" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+          </a>
+          
+        </div>
+      </div>      
+
+      <!-- Skills Section -->
+      <div id="skills" class="section hidden py-16 m-12 transition-opacity duration-500 opacity-0">
+        <div class="container mx-auto">
+          <h2 class="text-5xl font-bold text-white text-center mb-8">SKILLS</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/clogo.png" alt="C" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">C</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/cpp-logo.png" alt="C++" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">C++</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/java-logo.png" alt="java" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">Java</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/python-logo.png" alt="Python" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">Python</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/sql-logo.png" alt="SQL" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">SQL</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/django-logo.png" alt="Django" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">Django</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/flask-logo.png" alt="Flask" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">Flask</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/html-logo.png" alt="HTML" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">HTML</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/css-logo.png" alt="css" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">CSS</span>
+            </div>
+            <div class="skill-box text-center bg-black/40 text-white rounded-lg shadow-md p-6 flex flex-col items-center hover:scale-105 hover:shadow-accent hover:text-glow hover:text-accent transition duration-300">
+              <img src="/images/tailwindcss-logo.png" alt="tailwind" class="w-16 h-16 mb-4">
+              <span class="text-xl font-semibold">Tailwind</span>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Education Section -->
+      <div id="education" class="section hidden transition-opacity duration-500 opacity-0">
+        <h2 class="text-5xl font-bold text-white text-center mb-8">EDUCATION</h2>
+        <div class="relative max-w-4xl mx-auto p-6">
+          <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
+          <!-- SSLC -->
+          <div class="mb-10 flex justify-end items-center w-full">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-black flex items-center justify-center z-10 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent glow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.5a12.083 12.083 0 01-6.16-9.922L12 14z" />
+              </svg>
+            </div>
+            <div class="w-1/2"></div>
+            <div class="w-1/2 pl-8 text-left">
+              <h3 class="text-lg font-semibold text-accent">Secondary Education (SSLC)</h3>
+              <p class="text-white">SSVM, Tamil Nadu, India</p>
+              <p class="text-white">Board: State Board of Tamil Nadu</p>
+              <p class="text-white">2018-2019</p>
+              <p class="text-white">Percentage: 84.2%</p>
+            </div>
+          </div>
+          <!-- HSC -->
+          <div class="mb-10 flex justify-start items-center w-full">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-black flex items-center justify-center z-10 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent glow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.5a12.083 12.083 0 01-6.16-9.922L12 14z" />
+              </svg>
+            </div>
+            <div class="w-1/2 pr-8 text-right">
+              <h3 class="text-lg font-semibold text-accent">Higher Secondary Education (HSC)</h3>
+              <p class="text-white">NAMMHSS, Tamil Nadu, India</p>
+              <p class="text-white">Board: State Board of Tamil Nadu</p>
+              <p class="text-white">2020-2021</p>
+              <p class="text-white">Percentage: 87%</p>
+            </div>
+            <div class="w-1/2"></div>
+          </div>
+          <!-- UG -->
+          <div class="mb-10 flex justify-end items-center w-full">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-black flex items-center justify-center z-10 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent glow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.5a12.083 12.083 0 01-6.16-9.922L12 14z" />
+              </svg>
+            </div>
+            <div class="w-1/2"></div>
+            <div class="w-1/2 pl-8 text-left">
+              <h3 class="text-lg font-semibold text-accent">Bachelor of Computer Science</h3>
+              <p class="text-white">Hajee Karutha Rowther Howdia College, Tamil Nadu</p>
+              <p class="text-white">2021 - 2024</p>
+              <p class="text-white">CGPA: 7.93</p>
+            </div>
+          </div>
+
+          <!--PG-->
+          <div class="mb-10 flex justify-start items-center w-full">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-black flex items-center justify-center z-10 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent glow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.5a12.083 12.083 0 01-6.16-9.922L12 14z" />
+              </svg>
+            </div>
+            <div class="w-1/2 pr-8 text-right">
+              <h3 class="text-lg font-semibold text-accent">Master of Computer Application (MCA)</h3>
+              <p class="text-white">SRM Institute of Science and Technology, Chennai</p>
+              <p class="text-white">2024 - Expected 2026</p>
+              <p class="text-white">CGPA: 9.57 (Current)</p>
+            </div>
+            <div class="w-1/2"></div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!--Projects Section-->
+
+      <div id="projects" class="section hidden py-16 m-3 transition-opacity duration-500 opacity-0">
+        <h2 class="text-5xl text-white font-bold text-center mb-8">Projects</h2>
+      
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-black/60 border-2 border-accent rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-accent flex flex-col">
+            <img src="/images/ffmpeg-tool.jpg" alt="FFmpeg Tool" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl text-white font-semibold mb-2">FFMPEG TOOL</h3>
+            <p class="text-sm text-white mb-4">
+              This tool is created using the Python, TKinter and FFmpeg, it allows users to convert media files between formats, adjust bit rates, and manage file sizes through a simple GUI.
+            </p>
+            <div class="mt-auto pt-4">
+              <a href="#" class="text-accent hover:underline hover:text-glow">View Details</a>
+            </div>
+          </div>
+         
+      
+          <div class="bg-black/60 border-2 border-accent rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-accent flex flex-col">
+            <img src="/images/portfolio-site.png" alt="Portfolio Website" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl text-white font-semibold mb-2">PORTFOLIO WEBSITE</h3>
+            <p class="text-sm text-white mb-4">A Personal Porfolio Website which created by HTML, CSS, Tailwindcss and javascript.</p>
+            <div class="mt-auto pt-4">
+              <a href="#" class="text-accent hover:underline hover:text-glow">View Details</a>
+            </div>
+          </div>
+      
+          <div class="bg-black/60 border-2 border-accent rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-accent flex flex-col">
+            <img src="/images/movie.jpg" alt="Movie Recommendation System" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl text-white font-semibold mb-2">MOVIE RECOMMENDATION SYSTEM</h3>
+            <p class="text-sm text-white mb-4">A Desktop application which provides the movie suggestion for the user. It uses TMDB API to fetch the movie informations.</p>
+            <div class="mt-auto pt-4">
+              <a href="#" class="text-accent hover:underline hover:text-glow">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>            
+      
+      <!-- Contact Section -->
+      <div id="contact" class="section hidden transition-opacity duration-500 opacity-0">
+        <div class="container mx-auto">
+          <h2 class="text-5xl font-semibold text-white text-center mb-8">CONTACT FORM</h2>
+          <div class="bg-black/60 rounded-lg shadow-md border-2 border-white p-8 max-w-md mx-auto hover:shadow-accent hover:border-accent transition duration-500">
+            <form id="contact-form">
+              <div class="mb-4">
+                <label for="name" class="block text-white text-sm font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name" class="bg-black/60 shadow appearance-none border-2 border-white rounded w-full py-3 px-4 text-gray-100 leading-tight focus:ring-0 p-2 rounded-md transition duration-300" placeholder="Your Name">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-white text-sm font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email" class="bg-black/60 shadow appearance-none border-2 border-white rounded w-full py-3 px-4 text-gray-100 leading-tight focus:ring-0 p-2 rounded-md transition duration-300" placeholder="Your Email">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-white text-sm font-bold mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="bg-black/60 shadow appearance-none border-2 border-white rounded w-full py-3 px-4 text-gray-100 leading-tight focus:ring-0 p-2 rounded-md transition duration-300" placeholder="Your Message"></textarea>
+              </div>
+              <button type="submit" class="bg-black border-2 border-white hover:bg-black hover:text-accent hover:text-glow hover:shadow-accent hover:scale-105 text-white font-semibold py-2 px-4 rounded shadow transition duration-300">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>      
+    </main>
+  </div>
+
+  <script>
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    const sections = document.querySelectorAll('.section');
+
+    // Toggle sidebar when hamburger icon is clicked
+    hamburgerIcon.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+
+    // Show different sections on button click
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+      section.classList.add('hidden');
+      section.classList.remove('opacity-100');
+      section.classList.add('opacity-0');
+      });
+
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.remove('hidden');
+    // Use a small delay to allow Tailwind's transition to take effect
+      setTimeout(() => {
+        selectedSection.classList.remove('opacity-0');
+        selectedSection.classList.add('opacity-100');
+      }, 10);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+       showSection('about');
+    });
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const formObject = Object.fromEntries(formData.entries()); // more compatible
+
+    fetch('/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formObject),
+     })
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        alert("Message sent successfully!");
+        this.reset();
+     })
+      .catch(error => {
+        console.error('Fetch error:', error);
+        alert("Error sending message. Please try again.");
+      });
+    });
+
+  </script>
+</body>
+</html>
