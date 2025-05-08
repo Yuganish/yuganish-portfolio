@@ -5,7 +5,8 @@ This is my personal developer portfolio website built using modern web technolog
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js, HTML, CSS, JavaScript
-- **Styling:** Tailwind CSS (or any other framework you're using)
+- **Backend:** NodeJS(NodeMailer)
+- **Styling:** Tailwind CSS
 - **Version Control:** Git & GitHub
 
 ## 📁 Project Structure
