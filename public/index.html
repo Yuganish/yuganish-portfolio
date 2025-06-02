@@ -122,23 +122,23 @@
         </div>
         <div class="flex justify-center space-x-10 mt-20">
           <a href="mailto:yuganish03@gmail.com" target="_blank">
-            <img src="/mail-icon.png" alt="Email" class="max-w-[60px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+            <img src="/images/mail-icon.png" alt="Email" class="max-w-[60px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
           </a>
           <a href="https://www.linkedin.com/in/yuganish-k/" target="_blank">
-            <img src="/linkedin-icon.png" alt="LinkedIn" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+            <img src="/images/linkedin-icon.png" alt="LinkedIn" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
           </a>
           <a href="https://www.instagram.com/yuga_1238/" target="_blank">
-            <img src="/instagram-icon.png" alt="Instagram" class="max-w-[55px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+            <img src="/images/instagram-icon.png" alt="Instagram" class="max-w-[55px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
           </a>
-          <a href="https://github.com/Yuganish" target="_blank">
-            <img src="/github-icon.png" alt="GitHub" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
+          <a href="https://github.com/yourusername" target="_blank">
+            <img src="/images/github-icon.png" alt="GitHub" class="max-w-[140px] h-auto drop-shadow-[0_0_15px_#00ADB5] hover:scale-105 transition duration-300" />
           </a>
           
         </div>
       </div>      
-
+      <br><br><br>
       <!-- Skills Section -->
-      <div id="skills" class="section hidden py-16 m-12 transition-opacity duration-500 opacity-0">
+      <div id="skills" class="section">
         <div class="container mx-auto">
           <h2 class="text-5xl font-bold text-white text-center mb-8">SKILLS</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
@@ -187,9 +187,9 @@
         </div>
       </div>
       
-
+      <br><br><br><br><br><br><br>
       <!-- Education Section -->
-      <div id="education" class="section hidden transition-opacity duration-500 opacity-0">
+      <div id="education" class="section">
         <h2 class="text-5xl font-bold text-white text-center mb-8">EDUCATION</h2>
         <div class="relative max-w-4xl mx-auto p-6">
           <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
@@ -263,12 +263,13 @@
         </div>
       </div>
       
+      <br><br><br><br><br><br>
 
       <!--Projects Section-->
 
-      <div id="projects" class="section hidden py-16 m-3 transition-opacity duration-500 opacity-0">
+      <div id="projects" class="section">
         <h2 class="text-5xl text-white font-bold text-center mb-8">Projects</h2>
-      
+        <br><br><br>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-black/60 border-2 border-accent rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-accent flex flex-col">
             <img src="/ffmpeg-tool.jpg" alt="FFmpeg Tool" class="w-full h-40 object-cover rounded-lg mb-4">
@@ -302,10 +303,11 @@
         </div>
       </div>            
       
+      <br><br><br><br><br><br>
       <!-- Contact Section -->
-      <div id="contact" class="section hidden transition-opacity duration-500 opacity-0">
+      <div id="contact" class="section">
         <div class="container mx-auto">
-          <h2 class="text-5xl font-semibold text-white text-center mb-8">CONTACT FORM</h2>
+          <h2 class="text-5xl font-semibold text-white text-center mb-8">CONTACT FORM</h2><br><br><br>
           <div class="bg-black/60 rounded-lg shadow-md border-2 border-white p-8 max-w-md mx-auto hover:shadow-accent hover:border-accent transition duration-500">
             <form id="contact-form">
               <div class="mb-4">
@@ -341,24 +343,20 @@
 
     // Show different sections on button click
     function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-      section.classList.add('hidden');
-      section.classList.remove('opacity-100');
-      section.classList.add('opacity-0');
-      });
-
-      const selectedSection = document.getElementById(sectionId);
-      selectedSection.classList.remove('hidden');
-    // Use a small delay to allow Tailwind's transition to take effect
-      setTimeout(() => {
-        selectedSection.classList.remove('opacity-0');
-        selectedSection.classList.add('opacity-100');
-      }, 10);
+     const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     }
-    window.addEventListener('DOMContentLoaded', () => {
-       showSection('about');
+     window.addEventListener('DOMContentLoaded', () => {
+        const about = document.getElementById('about');
+        if (about) {
+            about.classList.remove('opacity-0');
+            about.classList.add('opacity-100'); // optional for full opacity
+    }
     });
+
+    //contact form
     document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
